@@ -1,8 +1,7 @@
 // Cashout Button Event
 document.getElementById('cashout-btn').addEventListener('click', function(){
     // get the agent number
-    const agentNumberInput = document.getElementById('cashout-number');
-    const agentNumber = agentNumberInput.value;
+    const agentNumber = getInputValue('cashout-number');
     
     if(agentNumber.length != 11) {
         alert('invalid agent number!');
@@ -10,8 +9,7 @@ document.getElementById('cashout-btn').addEventListener('click', function(){
     }
 
     // get the withdrwal money
-    const cashoutAmountInput = document.getElementById('cashout-amount');
-    const cashoutAmount = cashoutAmountInput.value;
+    const cashoutAmount = getInputValue('cashout-amount');
 
     // get the current balance
     const balanceElement = document.getElementById('balance');
@@ -25,8 +23,7 @@ document.getElementById('cashout-btn').addEventListener('click', function(){
     }
 
     // get the Pin number and process the cashout method
-    const cashoutPinInput = document.getElementById('cashout-pin');
-    const cashoutPin = cashoutPinInput.value;
+    const cashoutPin = getInputValue('cashout-pin');
     if(cashoutPin=='1001') {
         alert('Cashout Successful!');
         balanceElement.innerText = newBalance;
