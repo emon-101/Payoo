@@ -5,3 +5,14 @@ function getInputValue(id) {
     return inputValue;
 }
 
+// get the current balance
+function getBalance() {
+    const balanceContainer = document.getElementById('balance');
+    const balance = balanceContainer.innerText;
+    return Number(balance);
+}
+
+// set the current balance
+function setBalance(val) {
+    document.getElementById('balance').innerText = val;
+}
