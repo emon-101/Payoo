@@ -6,8 +6,8 @@ document.getElementById('add-money-btn').addEventListener('click', function(){
         return;
     }
     // get the bank account number
-    const backAccount = getInputValue('account-number');
-    if(backAccount.length != 11) {
+    const bankAccount = getInputValue('account-number');
+    if(bankAccount.length != 11) {
         alert('Incorrect account number!');
         return;
     }
@@ -28,6 +28,16 @@ document.getElementById('add-money-btn').addEventListener('click', function(){
     if(pin=='1001') {
         alert(`Add Money Successful form ${bank} at ${new Date()}`);
         setBalance(currentBalance);
+
+        const history = document.getElementById('history-container');
+
+        const newHistory = document.createElement('div');
+        newHistory.innerHTML = `
+            <div class="transaction-card p-5 bg-base-100 mt-5">
+                <p>Add Money Success from ${bank}, acc-no ${bankAccount} at ${new Date()} </p>
+            </div>
+        `;
+        history.appendChild(newHistory);
     } else {
         alert('Invalid Pin number');
         return;
